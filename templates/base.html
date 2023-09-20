@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Food Bank">
+    <meta name="author" content="Mahmudul Alam">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/olim.css' %}">
+    <title>{% block title %}Photopleer {% endblock title %}</title>
+    <!-- css -->
+    {% include 'partials/_styles.html' %}
+
+</head>
+
+
+<body>
+    <!-- navigation -->
+    {% include 'partials/_navbar.html' %}
+
+    <!-- main content -->
+
+    
+    {% block games %}
+        
+    {% endblock games %}
+        
+        {% block content %}
+        {% endblock content %}
+        
+        <!-- widgets -->
+       
+  
+    <!-- footer -->
+
+   

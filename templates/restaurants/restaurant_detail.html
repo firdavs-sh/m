@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}{{ block.super }}| {{ object.title }}{% endblock title %}
+{% block content %}
+<div class="row" style="  background: #212121; color: aliceblue;">
+    <div class="col-lg-8">
+        <center>
+            <h1 class="mt-4">{{ object.title }}</h1>
+        
+            <!-- Preview Image -->
+            <img style="width: 400px;" src="{{ object.image.url }}" alt="{{ object.title }}">
+        </center>
+
+        <hr>
+  
+
+
+        <!-- Post Content -->
+        <p class="lead">{{ object.details }}</p>
+    
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+            <h5 class="card-header">Savollar Bo'lsa </h5>
+            <div class="card-body">
+                <form action="." method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="hidden" name='slug' value="{{ object.slug }}">
+                        <textarea name="comment" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tekshirish</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Single Comment -->
+
+        {% if object.comments.all %}
+        {% for comment in object.comments.all %}
+        <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle comment_pic" src="{{ comment.user.profile.image.url }}" alt="Image">
+            <div class="media-body">
+                <h5 class="mt-0">{{ comment.user.get_full_name }}</h5>
+                <p>{{ comment.text }}<br>
+                    <small><i class="far fa-clock"></i>&nbsp{{ comment.created_at }}</small>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% block widgets %}{% include 'partials/_widgets.html' %}{% endblock widgets %}
+    {% endblock content %}

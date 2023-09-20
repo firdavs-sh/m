@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}{{ block.super }}|Home{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/t.css' %}">
+
+<div class = "container">
+  <h1>Hi, my name is</h1>
+    <h1>Firdavs.</h1>
+
+
+  {% block widgets %}{% include 'partials/_widgets.html' %}{% endblock widgets %}
+{% endblock content %}
+

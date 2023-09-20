@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block widgets %}{% endblock widgets %}
+{% block title %}{{ block.super }}| Dashboard{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/habar.css' %}">
+
+
+<form>
+    <label for="email">Muvofaqqiyatli Ro'yhatdan O'ttingiz</label>
+    <!-- <input type="email" value="" name="email" placeholder="email address" required> -->
+    <a class="input" type="submit" href="{% url 'home' %}">Bosh Sahifaga O'tish</a>
+  </form>
+{% endblock content %}
