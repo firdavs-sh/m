@@ -1,26 +1,26 @@
-# import pyautogui as pg 
+import pyautogui as pg 
 
-# import time 
+import time 
 
-# ani=()
+ani=("Hikmat qalesan")
 
 
-# time.sleep(8)
+time.sleep(8)
 
-# for i in range(100):
-#     pg.write(ani)
+for i in range(1000):
+    pg.write(ani)
    
-#     pg.press("Enter")
+    pg.press("Enter")
 
 
 
-import socket
+# import socket
 
-def get_ip_from_referral(referral_url):
-    domain = referral_url.split('/')[2]
-    ip_address = socket.gethostbyname(domain)
-    return ip_address
+# def get_ip_from_referral(referral_url):
+#     domain = referral_url.split('/')[2]
+#     ip_address = socket.gethostbyname(domain)
+#     return ip_address
 
-referral_url = "https://example.com/page"
-ip_address = get_ip_from_referral(referral_url)
-print("IP-адрес:", ip_address)
+# referral_url = "https://example.com/page"
+# ip_address = get_ip_from_referral(referral_url)
+# print("IP-адрес:", ip_address)
